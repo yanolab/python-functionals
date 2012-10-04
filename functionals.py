@@ -93,14 +93,14 @@ def slidingwithpadding(seq, size, step=1, padding=''):
 
     return imap(_, sliding('abcdefg', size, step))
 
-def reduceright(seq):
+def reduceright(func, seq):
     """
     applies a binary operator to all elements of this list, going right to left.
     """
-    pass
+    return reduce(func, reversed(seq))
 
 def reversemap(func, seq):
     """
     builds a new collection by applying a function to all elements of this list and collecting the results in reversed order.
     """
-    pass
+    return imap(func, reversed(seq))
